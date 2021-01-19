@@ -1,0 +1,66 @@
+﻿@model List<WebScrapper.Controllers.blog>
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/_LayoutWEATHER.cshtml";
+}
+<link rel="stylesheet" href="~/Content/weather/css/pageapi.css" />
+<link rel="stylesheet" href="~/Content/weather/css/style.css">
+<main class="main-content">
+    <div class="container">
+        <h2 class="module-title" style="margin-top:15px">Weather News</h2>
+    </div>
+
+    <div class="fullwidth-block">
+        <div class="container">
+            <div class="row">
+                <div class="page-column-1">
+                    <div class="content-module">
+                        <div class="zone-centerWell2">
+                            <div class="content-recirc">
+                                @foreach(var item in Model)
+                                {
+                                    <div class="content-tout">
+                                        <a href="@item.href">
+                                            <img src="@item.img" class="component-image tout-image" />
+                                        </a>
+                                        <div class="tout-body">
+                                            <div class="tout-body-link">
+                                                <a href="@item.href" class="tout-title">@item.title</a>
+                                                <div class="tout-meta">@DateTime.Now</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-coloum-2">
+                    <div class="right-rail left-align-children">
+                        <div class="glacier-ad top_right content-module"></div>
+                        <div class="glacier-ad middle content-module"></div>
+                        <div class="zone-rightRail1 content-module">
+                            <div class="right-rail-newsfeed" id="postnew">
+                                @foreach(var newsweather in Model)
+                                {
+                                <a class="right-rail-article" href="@newsweather.href">
+                                    <div class="right-rail-article-image">
+                                        <img src="@newsweather.img" width="308" height="170" />
+                                    </div>
+                                    <p class="right-rail-article-title">@newsweather.title</p>
+                                    <p class="right-rail-article-description">@newsweather.description</p>
+                                    <a href="@newsweather.href" class="right-rail-cta-text"><div class="right-rail-cta-more">Xem thêm</div></a>
+                                </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main> <!-- .main-content -->
+@section script
+{
+<script src="~/Scripts/news.js"></script>
+}

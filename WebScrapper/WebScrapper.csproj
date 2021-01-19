@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3DF3AAC0-967B-405C-87A3-F080B6241EAF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebScrapper</RootNamespace>
+    <AssemblyName>WebScrapper</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsvHelper, Version=15.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.15.0.5\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.23.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.23\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\NewController.cs" />
+    <Compile Include="Controllers\ScrapperController.cs" />
+    <Compile Include="Controllers\WebAPIController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scrapper7day.cs" />
+    <Compile Include="Models\ScrapperCurent.cs" />
+    <Compile Include="Models\ScrapperDetail.cs" />
+    <Compile Include="Models\WeatherAPICurrent.cs" />
+    <Compile Include="Models\WeatherDbContext.cs" />
+    <Compile Include="Models\WebAPI5Day.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\loading.css" />
+    <Content Include="Content\myStyle.css" />
+    <Content Include="Content\bootstrap-datepicker.min.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\weather\css\pageapi.css" />
+    <Content Include="Content\weather\css\style.css" />
+    <Content Include="Content\weather\fonts\font-awesome.min.css" />
+    <Content Include="Content\weather\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\weather\images\arrow%402x.png" />
+    <Content Include="Content\weather\images\arrow-down%402x.jpg" />
+    <Content Include="Content\weather\images\arrow-down%402x.png" />
+    <Content Include="Content\weather\images\arrow-down.jpg" />
+    <Content Include="Content\weather\images\arrow-down.png" />
+    <Content Include="Content\weather\images\arrow-gray%402x.png" />
+    <Content Include="Content\weather\images\arrow-gray.png" />
+    <Content Include="Content\weather\images\arrow-left-white%402x.png" />
+    <Content Include="Content\weather\images\arrow-left-white.png" />
+    <Content Include="Content\weather\images\arrow.png" />
+    <Content Include="Content\weather\images\banner%402x.png" />
+    <Content Include="Content\weather\images\banner.png" />
+    <Content Include="Content\weather\images\featured-image-1%402x.jpg" />
+    <Content Include="Content\weather\images\featured-image-1.jpg" />
+    <Content Include="Content\weather\images\featured-image-2%402x.jpg" />
+    <Content Include="Content\weather\images\featured-image-2.jpg" />
+    <Content Include="Content\weather\images\featured-image-3%402x.jpg" />
+    <Content Include="Content\weather\images\featured-image-3.jpg" />
+    <Content Include="Content\weather\images\icon-compass%402x.png" />
+    <Content Include="Content\weather\images\icon-compass.png" />
+    <Content Include="Content\weather\images\icon-envelope%402x.png" />
+    <Content Include="Content\weather\images\icon-envelope.png" />
+    <Content Include="Content\weather\images\icon-marker%402x.png" />
+    <Content Include="Content\weather\images\icon-marker.png" />
+    <Content Include="Content\weather\images\icon-phone%402x.png" />
+    <Content Include="Content\weather\images\icon-phone.png" />
+    <Content Include="Content\weather\images\icon-umberella%402x.png" />
+    <Content Include="Content\weather\images\icon-umberella.png" />
+    <Content Include="Content\weather\images\icon-wind%402x.png" />
+    <Content Include="Content\weather\images\icon-wind.png" />
+    <Content Include="Content\weather\images\icons\icon-1.svg" />
+    <Content Include="Content\weather\images\icons\icon-10.svg" />
+    <Content Include="Content\weather\images\icons\icon-11.svg" />
+    <Content Include="Content\weather\images\icons\icon-12.svg" />
+    <Content Include="Content\weather\images\icons\icon-13.svg" />
+    <Content Include="Content\weather\images\icons\icon-14.svg" />
+    <Content Include="Content\weather\images\icons\icon-2.svg" />
+    <Content Include="Content\weather\images\icons\icon-3.svg" />
+    <Content Include="Content\weather\images\icons\icon-4.svg" />
+    <Content Include="Content\weather\images\icons\icon-5.svg" />
+    <Content Include="Content\weather\images\icons\icon-6.svg" />
+    <Content Include="Content\weather\images\icons\icon-7.svg" />
+    <Content Include="Content\weather\images\icons\icon-8.svg" />
+    <Content Include="Content\weather\images\icons\icon-9.svg" />
+    <Content Include="Content\weather\images\live-camera-1%402x.jpg" />
+    <Content Include="Content\weather\images\live-camera-1.jpg" />
+    <Content Include="Content\weather\images\live-camera-2%402x.jpg" />
+    <Content Include="Content\weather\images\live-camera-2.jpg" />
+    <Content Include="Content\weather\images\live-camera-3%402x.jpg" />
+    <Content Include="Content\weather\images\live-camera-3.jpg" />
+    <Content Include="Content\weather\images\live-camera-4%402x.jpg" />
+    <Content Include="Content\weather\images\live-camera-4.jpg" />
+    <Content Include="Content\weather\images\live-camera-5%402x.jpg" />
+    <Content Include="Content\weather\images\live-camera-5.jpg" />
+    <Content Include="Content\weather\images\live-camera-6%402x.jpg" />
+    <Content Include="Content\weather\images\live-camera-6.jpg" />
+    <Content Include="Content\weather\images\live-camera-7%402x.jpg" />
+    <Content Include="Content\weather\images\live-camera-7.jpg" />
+    <Content Include="Content\weather\images\live-camera-8%402x.jpg" />
+    <Content Include="Content\weather\images\live-camera-8.jpg" />
+    <Content Include="Content\weather\images\logo%402x.png" />
+    <Content Include="Content\weather\images\logo.png" />
+    <Content Include="Content\weather\images\photo-1%402x.jpg" />
+    <Content Include="Content\weather\images\photo-1.jpg" />
+    <Content Include="Content\weather\images\photo-10%402x.jpg" />
+    <Content Include="Content\weather\images\photo-10.jpg" />
+    <Content Include="Content\weather\images\photo-2%402x.jpg" />
+    <Content Include="Content\weather\images\photo-2.jpg" />
+    <Content Include="Content\weather\images\photo-3%402x.jpg" />
+    <Content Include="Content\weather\images\photo-3.jpg" />
+    <Content Include="Content\weather\images\photo-4%402x.jpg" />
+    <Content Include="Content\weather\images\photo-4.jpg" />
+    <Content Include="Content\weather\images\photo-5%402x.jpg" />
+    <Content Include="Content\weather\images\photo-5.jpg" />
+    <Content Include="Content\weather\images\photo-7%402x.jpg" />
+    <Content Include="Content\weather\images\photo-7.jpg" />
+    <Content Include="Content\weather\images\photo-8%402x.jpg" />
+    <Content Include="Content\weather\images\photo-8.jpg" />
+    <Content Include="Content\weather\images\photo-9%402x.jpg" />
+    <Content Include="Content\weather\images\photo-9.jpg" />
+    <Content Include="Content\weather\images\play-button%402x.png" />
+    <Content Include="Content\weather\images\play-button.png" />
+    <Content Include="Content\weather\images\quote%402x.png" />
+    <Content Include="Content\weather\images\quote.png" />
+    <Content Include="Content\weather\images\thumb-1%402x.jpg" />
+    <Content Include="Content\weather\images\thumb-1.jpg" />
+    <Content Include="Content\weather\images\thumb-2%402x.jpg" />
+    <Content Include="Content\weather\images\thumb-2.jpg" />
+    <Content Include="Content\weather\images\thumb-3%402x.jpg" />
+    <Content Include="Content\weather\images\thumb-3.jpg" />
+    <Content Include="Content\weather\images\thumb-4%402x.jpg" />
+    <Content Include="Content\weather\images\thumb-4.jpg" />
+    <Content Include="Content\weather\images\thumb-5%402x.jpg" />
+    <Content Include="Content\weather\images\thumb-5.jpg" />
+    <Content Include="Content\weather\images\thumb-6%402x.jpg" />
+    <Content Include="Content\weather\images\thumb-6.jpg" />
+    <Content Include="Content\weather\images\thumb-7%402x.jpg" />
+    <Content Include="Content\weather\images\thumb-7.jpg" />
+    <Content Include="Content\weather\images\thumb-8%402x.jpg" />
+    <Content Include="Content\weather\images\thumb-8.jpg" />
+    <Content Include="Content\weather\images\thumb-9%402x.jpg" />
+    <Content Include="Content\weather\images\thumb-9.jpg" />
+    <Content Include="Content\weather\images\weather.jpg" />
+    <Content Include="Content\weather\js\app.js" />
+    <Content Include="Content\weather\js\ie-support\html5.js" />
+    <Content Include="Content\weather\js\ie-support\pie.htc" />
+    <Content Include="Content\weather\js\ie-support\respond.js" />
+    <Content Include="Content\weather\js\jquery-1.11.1.min.js" />
+    <Content Include="Content\weather\js\min\app-min.js" />
+    <Content Include="Content\weather\js\min\plugins-min.js" />
+    <Content Include="Content\weather\js\plugins.js" />
+    <Content Include="Content\weather\js\toastr.min.js" />
+    <Content Include="Content\weather\__MACOSX\._contact.html" />
+    <Content Include="Content\weather\__MACOSX\._index.html" />
+    <Content Include="Content\weather\__MACOSX\._live-cameras.html" />
+    <Content Include="Content\weather\__MACOSX\._news.html" />
+    <Content Include="Content\weather\__MACOSX\._photos.html" />
+    <Content Include="Content\weather\__MACOSX\._single.html" />
+    <Content Include="Content\weather\__MACOSX\._style.css" />
+    <Content Include="Content\weather\__MACOSX\fonts\._font-awesome.min.css" />
+    <Content Include="Content\weather\__MACOSX\fonts\._fontawesome-webfont.svg" />
+    <Content Include="Content\weather\__MACOSX\images\._arrow%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._arrow-down%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._arrow-down%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._arrow-down.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._arrow-down.png" />
+    <Content Include="Content\weather\__MACOSX\images\._arrow-gray%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._arrow-gray.png" />
+    <Content Include="Content\weather\__MACOSX\images\._arrow-left-white%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._arrow-left-white.png" />
+    <Content Include="Content\weather\__MACOSX\images\._arrow.png" />
+    <Content Include="Content\weather\__MACOSX\images\._banner%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._banner.png" />
+    <Content Include="Content\weather\__MACOSX\images\._featured-image-1%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._featured-image-1.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._featured-image-2%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._featured-image-2.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._featured-image-3%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._featured-image-3.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._icon-compass%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._icon-compass.png" />
+    <Content Include="Content\weather\__MACOSX\images\._icon-envelope%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._icon-envelope.png" />
+    <Content Include="Content\weather\__MACOSX\images\._icon-marker%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._icon-marker.png" />
+    <Content Include="Content\weather\__MACOSX\images\._icon-phone%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._icon-phone.png" />
+    <Content Include="Content\weather\__MACOSX\images\._icon-umberella%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._icon-umberella.png" />
+    <Content Include="Content\weather\__MACOSX\images\._icon-wind%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._icon-wind.png" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-1%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-1.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-2%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-2.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-3%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-3.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-4%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-4.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-5%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-5.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-6%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-6.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-7%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-7.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-8%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._live-camera-8.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._logo%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._logo.png" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-1%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-1.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-10%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-10.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-2%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-2.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-3%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-3.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-4%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-4.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-5%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-5.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-7%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-7.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-8%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-8.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-9%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._photo-9.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._play-button%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._play-button.png" />
+    <Content Include="Content\weather\__MACOSX\images\._quote%402x.png" />
+    <Content Include="Content\weather\__MACOSX\images\._quote.png" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-1%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-1.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-2%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-2.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-3%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-3.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-4%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-4.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-5%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-5.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-6%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-6.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-7%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-7.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-8%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-8.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-9%402x.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\._thumb-9.jpg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-1.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-10.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-11.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-12.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-13.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-14.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-2.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-3.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-4.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-5.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-6.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-7.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-8.svg" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-9.svg" />
+    <Content Include="Content\weather\__MACOSX\js\._app.js" />
+    <Content Include="Content\weather\__MACOSX\js\._jquery-1.11.1.min.js" />
+    <Content Include="Content\weather\__MACOSX\js\._plugins.js" />
+    <Content Include="Content\weather\__MACOSX\js\ie-support\._html5.js" />
+    <Content Include="Content\weather\__MACOSX\js\ie-support\._pie.htc" />
+    <Content Include="Content\weather\__MACOSX\js\ie-support\._respond.js" />
+    <Content Include="Content\weather\__MACOSX\js\min\._app-min.js" />
+    <Content Include="Content\weather\__MACOSX\js\min\._plugins-min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\city.list.json" />
+    <Content Include="Content\weather\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\weather\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\weather\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\weather\fonts\FontAwesome.otf" />
+    <Content Include="Content\weather\images\icons\icon-7.ai" />
+    <Content Include="Content\weather\js\jquery-1.11.1.min.map" />
+    <Content Include="Content\weather\sass\layout\_content.scss" />
+    <Content Include="Content\weather\sass\layout\_footer.scss" />
+    <Content Include="Content\weather\sass\layout\_header.scss" />
+    <Content Include="Content\weather\sass\layout\_sidebar.scss" />
+    <Content Include="Content\weather\sass\libs\bootstrap-grid\_grid.scss" />
+    <Content Include="Content\weather\sass\libs\bootstrap-grid\_mixins.scss" />
+    <Content Include="Content\weather\sass\libs\bootstrap-grid\_settings.scss" />
+    <Content Include="Content\weather\sass\libs\_components.scss" />
+    <Content Include="Content\weather\sass\libs\_global.scss" />
+    <Content Include="Content\weather\sass\libs\_mixins.scss" />
+    <Content Include="Content\weather\sass\libs\_normalize.scss" />
+    <Content Include="Content\weather\sass\libs\_settings.scss" />
+    <Content Include="Content\weather\sass\style.scss" />
+    <Content Include="Content\weather\__MACOSX\._dummy" />
+    <Content Include="Content\weather\__MACOSX\._fonts" />
+    <Content Include="Content\weather\__MACOSX\._images" />
+    <Content Include="Content\weather\__MACOSX\._js" />
+    <Content Include="Content\weather\__MACOSX\._sass" />
+    <Content Include="Content\weather\__MACOSX\fonts\._fontawesome-webfont.eot" />
+    <Content Include="Content\weather\__MACOSX\fonts\._fontawesome-webfont.ttf" />
+    <Content Include="Content\weather\__MACOSX\fonts\._fontawesome-webfont.woff" />
+    <Content Include="Content\weather\__MACOSX\fonts\._FontAwesome.otf" />
+    <Content Include="Content\weather\__MACOSX\images\._icons" />
+    <Content Include="Content\weather\__MACOSX\images\icons\._icon-7.ai" />
+    <Content Include="Content\weather\__MACOSX\js\._ie-support" />
+    <Content Include="Content\weather\__MACOSX\js\._jquery-1.11.1.min.map" />
+    <Content Include="Content\weather\__MACOSX\js\._min" />
+    <Content Include="Content\weather\__MACOSX\sass\._layout" />
+    <Content Include="Content\weather\__MACOSX\sass\._libs" />
+    <Content Include="Content\weather\__MACOSX\sass\._pages" />
+    <Content Include="Content\weather\__MACOSX\sass\._style.scss" />
+    <Content Include="Content\weather\__MACOSX\sass\layout\.__content.scss" />
+    <Content Include="Content\weather\__MACOSX\sass\layout\.__footer.scss" />
+    <Content Include="Content\weather\__MACOSX\sass\layout\.__header.scss" />
+    <Content Include="Content\weather\__MACOSX\sass\layout\.__sidebar.scss" />
+    <Content Include="Content\weather\__MACOSX\sass\libs\._bootstrap-grid" />
+    <Content Include="Content\weather\__MACOSX\sass\libs\.__components.scss" />
+    <Content Include="Content\weather\__MACOSX\sass\libs\.__global.scss" />
+    <Content Include="Content\weather\__MACOSX\sass\libs\.__mixins.scss" />
+    <Content Include="Content\weather\__MACOSX\sass\libs\.__normalize.scss" />
+    <Content Include="Content\weather\__MACOSX\sass\libs\.__settings.scss" />
+    <Content Include="Content\weather\__MACOSX\sass\libs\bootstrap-grid\.__grid.scss" />
+    <Content Include="Content\weather\__MACOSX\sass\libs\bootstrap-grid\.__mixins.scss" />
+    <Content Include="Content\weather\__MACOSX\sass\libs\bootstrap-grid\.__settings.scss" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\news.js" />
+    <Content Include="Scripts\openweather.js" />
+    <Content Include="Scripts\webscrapperforecast.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Scrapper\webScrapper.cshtml" />
+    <Content Include="Views\Shared\_LayoutWEATHER.cshtml" />
+    <Content Include="Views\WebAPI\WeatherAPI.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\New\News.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\weather\sass\pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56138</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56138/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

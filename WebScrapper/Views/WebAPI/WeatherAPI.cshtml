@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "WeatherAPI";
+    Layout = "~/Views/Shared/_LayoutWEATHER.cshtml";
+}
+<link rel="stylesheet" href="~/Content/weather/css/pageapi.css" />
+<link rel="stylesheet" href="~/Content/weather/css/style.css">
+<link rel="stylesheet" href="~/Content/bootstrap-datepicker.min.css" />
+<div class="hero" style="background-image:url(/Content/weather/images/weather.jpg)">
+    <div class="container">
+        <form action="#" class="find-location" style="width:85%;float: left">
+            <input type="text" placeholder="Find your location..." id="txtCity">
+            <input type="submit" value="Find" id="btnSearch">
+        </form>
+        <form>
+            <input type="submit" value="My position" id="btnposition" style="margin: 3px 10px 0px 20px;height:50px ">
+        </form>
+    </div>
+</div>
+<div class="forecast-table">
+    <div class="container">
+        <div class="forecast-container">
+            <div class="today forecast" style="width: 500px">
+                <div class="forecast-header">
+                    <div class="day"><p id="day"></p></div>
+                    <div class="date"><p id="latlong"></p></div>
+                </div> <!-- .forecast-header -->
+                <div class="forecast-content" id="daydaily">
+                    <div class="location" id="namecity"></div>
+                    <div class="degree">
+                        <div class="num" id="temp"></div>
+                        <div class="forecast-icon" id="icon" style="height:90px"></div>
+                        <div id="description" style="margin-bottom:10px;"></div>
+                    </div>
+                    <span id="humidity"></span>
+                    <span id="windspeed"></span>
+                    <span id="pressure"></span>
+                    <span id="clouds"></span>
+                </div>
+            </div>
+            <div id="forecastdaily"></div>
+        </div>
+    </div>
+</div>
+<main class="main-content">
+    <div class="fullwidth-block">
+        <div class="container">
+            <div class="col-sm-12 row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input class="form-control" id="inputdate" placeholder="Tìm kiếm theo ngày tháng" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input class="form-control" id="inputaddress" placeholder="Tìm kiếm theo địa điểm" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <button class="btn btn-info" id="btnsearchdate">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fullwidth-block">
+        <div class="container">
+            <div class="content-module">
+                <div class="page-column-1" id="forecast-daily"></div>
+                <div class="page-coloum-2">
+                    <div class="right-rail left-align-children">
+                        <div class="glacier-ad top_right content-module"></div>
+                        <div class="glacier-ad middle content-module"></div>
+                        <div class="zone-rightRail1 content-module">
+                            <div class="right-rail-newsfeed" id="postnew"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fullwidth-block">
+        <div class="container">
+            <div class="col-sm-9">
+                <iframe width="830" height="415" src="https://www.youtube.com/embed/o1QMZcdN8Kw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</main> <!-- .main-content -->
+@section script
+{
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkchgz2GZovIkREtIY90mFEVCISZvlOQI"></script>
+    <script src="~/Scripts/openweather.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+}

@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "WEB SCRAPPER";
+    Layout = "~/Views/Shared/_LayoutWEATHER.cshtml";
+
+}
+<link rel="stylesheet" href="~/Content/bootstrap.css" />
+<link rel="stylesheet" href="~/Content/myStyle.css" />
+<link rel="stylesheet" href="~/Content/loading.css" />
+<link rel="stylesheet" href="~/Content/weather/css/style.css">
+<link rel="stylesheet" href="~/Content/bootstrap-datepicker.min.css" />
+<div class="hero" style="background-image:url(/Content/weather/images/weather.jpg)">
+    <div class="container">
+        <form action="#" class="find-location">
+            <input type="text" placeholder="Find your location..." id="namecity">
+            <input type="submit" value="Find" id="btnSearch">
+        </form>
+    </div>
+</div>
+<div class="forecast-table">
+    <div class="container">
+        <div class="forecast-container">
+            <div class="today forecast">
+                <div class="forecast-header">
+                    <div class="day" id="day"></div>
+                    <div class="date" id="date"></div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="current_conditions-summary" class="pull-left"></div>
+                        <div id="current_conditions_detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<main class="main-content">
+    <div class="fullwidth-block">
+        <div class="container">
+            <div class="col-sm-12 row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input class="form-control" id="inputdate" placeholder="Tìm kiếm theo ngày tháng" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input class="form-control" id="inputaddress" placeholder="Tìm kiếm theo địa điểm" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <button class="btn btn-info" id="btnsearchdate">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fullwidth-block">
+        <div class="container">
+            <div class="content-module">
+                <div class="page-column-1">
+                    <!-- Thời tiết 7 ngày tiếp theo-->
+                    <div id="seven-day-forecast" class="panel panel-default">
+                        <div class="panel-heading" id="seven-day-forecast-heading"></div>
+                        <div class="panel-body" id="seven-day-forecast-body">
+                            <div id="seven-day-forecast-container"></div>
+                        </div>
+                    </div>
+                    <!--Chi tiết dự báo thời tiế-->
+                    <div class="col-sm-8" style="float:left">
+                        <div id="detailed-forecast" class="panel panel-default">
+                            <div class="panel-heading">Chi tiết dự báo thời tiết</div>
+                            <div class="panel-body" id="detailed-forecast-body">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="right-rail left-align-children">
+                            <div class="glacier-ad top_right content-module"></div>
+                            <div class="glacier-ad middle content-module"></div>
+                            <div class="zone-rightRail1 content-module">
+                                <div class="right-rail-newsfeed" id="postnew"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fullwidth-block">
+        <div class="container">
+            <div class="col-sm-9">
+                <iframe width="835" height="415" src="https://www.youtube.com/embed/EfSqCfqwX_0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</main> <!-- .main-content -->
+
+@section script{
+    <!-- Essential javascripts for application to work-->
+    <script src="~/Scripts/webscrapperforecast.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+}
+
